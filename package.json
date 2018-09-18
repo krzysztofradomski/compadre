@@ -1,0 +1,16 @@
+{
+  "name": "compadre",
+  "version": "1.0.0",
+  "description": "a name generator for front-end apps",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "demo": "npm run demo.js"
+  },
+  "keywords": [
+    "name",
+    "generator"
+  ],
+  "author": "Krzysztof Radomski",
+  "license": "MIT"
+}

@@ -1,0 +1,1 @@
+export const adjectivesDictionary = ['sad', 'blue'];
