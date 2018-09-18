@@ -36,8 +36,7 @@ which will contain any or all of these overrides:
 | *suffix*     | String   | not included                                         | A suffix.                         |
 | *glue*       | String   | `_`           | When a name is generated, all the words will be glued together using this string.  |
 | *unique*     | Boolean  | *true*        | Nouns will be unique, not like in some other generators!                 |
-| *fallback*   | String   | `Date.now()`  | Unique names means you can run out of dictionary! 
-If you use custom lists and unique names, be sure to provide a good fallback word, else a datestamp will be used.    |
+| *fallback*   | String   | `Date.now()`  | Unique names means you can run out of dictionary! If you use custom lists and unique names, be sure to provide a good fallback word, else a datestamp will be used.    |
 | *up*     | Boolean      | *false*       | Whether or not the first letter will be uppercase.                       |
 The `init()` method creates a class instance with a `generate()` method.
 ### const nameGenerator = compadre.init();
@@ -67,7 +66,7 @@ Compadre includes two list of neutral and non-offensive words: nouns and adjecti
 lists will overwrite the included lists.
 You can override one or both of the lists.
 ```javascript
-import compadre from 'compadre;
+import compadre from 'compadre';
 
 const superheroes = {
   adjectives : ['super', 'captain', 'awesome'],
