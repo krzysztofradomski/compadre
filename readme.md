@@ -15,7 +15,7 @@ $ npm run demo
 ```
 ## Quickstart
 ```javascript
-import compadre from 'compadre;
+import compadre from 'compadre';
 const nameGenerator = new compadre.init();
 const name1 = nameGenerator.generate();
 console.log(name1); // funky_swordfish
@@ -49,7 +49,7 @@ This is intended to be used to generate random names of two parts, you can use i
 lists and decorators you require.
 ### Simple interface
 ```javascript
-import compadre from 'compadre;
+import compadre from 'compadre';
 
 const compadre1 = new compadre.init();
 const name1 = compadre1.generate();    // blue_swede
@@ -59,6 +59,7 @@ const name2 = compadre2.generate();    // l33t_tarnished_silver
 
 const compadre3 = new compadre.init({glue: '**'});
 const name3 = compadre3.generate();     // big**boss
+
 etc...
 ```
 ### Provide your own word lists
