@@ -25,13 +25,13 @@ The exposed methods are `init()` and `generate()`. There's also `seed(dictionary
 `Init` and `generate()` are the necessary ones. `seed()` is optional and allows you to push new words into dictionary,
 it can be useful e.g. when you use a short list of custom names and want to recycle the used ones back into the pool.
 `kill` is for when you really want to help out the garbage collector.
-### compadre.init()
+
 When you import compadre, you will need to invoke `init()` and optionally pass in an `options` object, 
 which will contain any or all of these overrides: 
 | Option       | Type     | Default        | Description |
 | ------------ | -------- | -------------- | ----------- |
-| *adjectives* | Array    | [Included](https://github.com/krzysztofradomski)     | A list of adjectives or surnames. |
-| *nouns*      | Array    | [Included](https://github.com/krzysztofradomski)     | A list of adjectives or surnames. |
+| *adjectives* | Array    | [Included](https://github.com/krzysztofradomski/compadre/blob/master/dictionaries/adjectives.js)     | A list of adjectives or surnames. |
+| *nouns*      | Array    | [Included](https://github.com/krzysztofradomski/compadre/blob/master/dictionaries/nouns.js)     | A list of adjectives or surnames. |
 | *prefix*     | String   | not included                                         | A prefix.                         |
 | *suffix*     | String   | not included                                         | A suffix.                         |
 | *glue*       | String   | `_`           | When a name is generated, all the words will be glued together using this string.  |
@@ -39,10 +39,9 @@ which will contain any or all of these overrides:
 | *fallback*   | String   | `Date.now()`  | Unique names means you can run out of dictionary! If you use custom lists and unique names, be sure to provide a good fallback word, else a datestamp will be used.    |
 | *up*     | Boolean      | *false*       | Whether or not the first letter will be uppercase.                       |
 The `init()` method creates a class instance with a `generate()` method.
-### const nameGenerator = compadre.init();
-### const yourUniqueName = nameGenerator().generate();
-After you call `init`, you can then call `generate()` which will build your name. It takes an array of fragment getters. 
-If you pass anything else into the array, `generate()` will throw an `'Unknown getter method passed to compadre.generate()'` error.
+
+The `init()` method creates a class instance with a `generate()` method.
+
 ## Usage
 This is intended to be used to generate random names of two parts, you can use it however you see fit with whatever 
 lists and decorators you require.
