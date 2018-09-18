@@ -28,6 +28,7 @@ it can be useful e.g. when you use a short list of custom names and want to recy
 
 When you import compadre, you will need to invoke `init()` and optionally pass in an `options` object, 
 which will contain any or all of these overrides: 
+
 | Option       | Type     | Default        | Description |
 | ------------ | -------- | -------------- | ----------- |
 | *adjectives* | Array    | [Included](https://github.com/krzysztofradomski/compadre/blob/master/dictionaries/adjectives.js)     | A list of adjectives or surnames. |
@@ -38,13 +39,11 @@ which will contain any or all of these overrides:
 | *unique*     | Boolean  | *true*        | Nouns will be unique, not like in some other generators!                 |
 | *fallback*   | String   | `Date.now()`  | Unique names means you can run out of dictionary! If you use custom lists and unique names, be sure to provide a good fallback word, else a datestamp will be used.    |
 | *up*     | Boolean      | *false*       | Whether or not the first letter will be uppercase.                       |
-The `init()` method creates a class instance with a `generate()` method.
-
-The `init()` method creates a class instance with a `generate()` method.
 
 ## Usage
-This is intended to be used to generate random names of two parts, you can use it however you see fit with whatever 
-lists and decorators you require.
+The `init()` method creates a class instance with a `generate()` method.
+Default settings will generate random name of two parts, but you can init it however you see fit with whatever 
+lists and options you require.
 ### Simple interface
 ```javascript
 import compadre from 'compadre';
