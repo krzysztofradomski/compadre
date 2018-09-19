@@ -1,2 +1,2 @@
-export { nounsDictionary } from './nouns';
-export { adjectivesDictionary } from './adjectives';
+export { nounsDictionary } from './nouns.js';
+export { adjectivesDictionary } from './adjectives.js';

@@ -1,4 +1,4 @@
-//import { nounsDictionary, adjectivesDictionary } from './dictionaries';
+import { nounsDictionary, adjectivesDictionary } from './dictionaries/index.js';
 
 const random = (min, max) => Math.random() * (max - min) + min;
 
@@ -70,3 +70,5 @@ class compadre {
       .join(this.glue);
   }
 }
+
+window.compadre = compadre;
