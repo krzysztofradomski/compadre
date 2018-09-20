@@ -12,24 +12,28 @@ class compadre {
     fallback,
     unique,
     maxLen,
+    up,
   } = {}) {
     this.adjectives = adjectives || adjectivesDictionary;
     this.nouns = nouns || nounsDictionary;
     this.glue = glue || '_';
     this.prefix = prefix;
     this.suffix = suffix;
-    this.fallback = fallback;
-    this.unique = unique || true;
+    this.fallback = fallback || Date.now
+    this.unique = unique || false;
     this.maxLen = maxLen || null;
+    this.up = up || false,
     this.used = [];
-  }
-
-  init() {
     this.fetchNoun = () => {
       if (this.nouns.length > 0) {
         const index = Math.round(random(0, this.nouns.length - 1));
-        const word = this.nouns[index].toUpperCase();
-        this.nouns.splice(index, 1);
+        let word = this.nouns[index];
+        if (this.up) {
+          word = word.charAt(0).toUpperCase() + word.slice(1);
+        }
+        if (this.unique) {
+          this.nouns.splice(index, 1);
+        }
         this.used.push(word);
         return this.maxLen
           ? word.length <= this.maxLen ? word : this.fetchNoun()
@@ -37,9 +41,13 @@ class compadre {
       } return null;
     };
     this.fetchAdjective = () => {
+      if (this.adjectives.length === 0) return '';
       if (!this.maxLen || (this.maxLen && this.adjectives.filter(word => word.length <= this.maxLen).length > 0)) {
         const index = Math.round(random(0, this.adjectives.length - 1));
-        const word = this.adjectives[index].toUpperCase();
+        let word = this.adjectives[index];
+        if (this.up) {
+          word = word.charAt(0).toUpperCase() + word.slice(1);
+        }
         // this.adjectives.splice(index, 1);
         // this.used.push(word);
         return this.maxLen
@@ -49,12 +57,12 @@ class compadre {
     };
   }
 
-  seed(dictionary, word) {
-    this[dictionary].push(word);
+  seed(word) {
+    this.nouns.push(word);
   }
 
   kill() {
-    Object.keys(this).array.forEach((key) => {
+    Object.keys(this).forEach((key) => {
       this[key] = null;
     });
   }
@@ -63,7 +71,7 @@ class compadre {
     return [
       this.prefix,
       this.fetchAdjective(),
-      this.fetchNoun() || `${this.fallback ? this.fallback + this.glue : ''}${Date.now()}`,
+      this.fetchNoun() || this.fallback(),
       this.suffix,
     ]
       .filter(Boolean)
