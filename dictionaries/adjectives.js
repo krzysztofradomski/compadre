@@ -1,1 +1,5 @@
-export const adjectivesDictionary = ['sad', 'blue'];
+export const adjectivesDictionary = [
+  'sad', 
+  'blue',
+  'big',
+];

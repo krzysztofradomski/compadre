@@ -73,4 +73,7 @@ export const nounsDictionary = [
   'flood',
   'horn',
   'foot',
+  'surfer',
+  'boss',
+  'swede',
 ];

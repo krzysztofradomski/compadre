@@ -12,8 +12,5 @@
     "generator"
   ],
   "author": "Krzysztof Radomski",
-  "license": "MIT",
-  "dependencies": {
-    "http-server": "^0.11.1"
-  }
+  "license": "MIT"
 }
