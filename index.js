@@ -48,8 +48,6 @@ class compadre {
         if (this.up) {
           word = word.charAt(0).toUpperCase() + word.slice(1);
         }
-        // this.adjectives.splice(index, 1);
-        // this.used.push(word);
         return this.maxLen
           ? word.length <= this.maxLen ? word : this.fetchAdjective()
           : word;
@@ -79,4 +77,4 @@ class compadre {
   }
 }
 
-window.compadre = compadre;
+export default compadre;
