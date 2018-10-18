@@ -19,8 +19,8 @@ Optionally, when instancing a new generator, `config` object can be passed with 
 
 | Option       | Type     | Default        | Description |
 | ------------ | -------- | -------------- | ----------- |
-| *adjectives* | Array    | [Included](https://github.com/krzysztofradomski/compadre/blob/master/dictionaries/adjectives.js)  | A list of curated adjectives, around 2 entries long.          |
-| *nouns*      | Array    | [Included](https://github.com/krzysztofradomski/compadre/blob/master/dictionaries/nouns.js)       | A list of curated nouns, around 74 entries long.               |
+| *adjectives* | Array    | [Included](https://github.com/krzysztofradomski/compadre/blob/master/dictionaries/adjectives.js)  | A list of curated adjectives, around 520 entries long.          |
+| *nouns*      | Array    | [Included](https://github.com/krzysztofradomski/compadre/blob/master/dictionaries/nouns.js)       | A list of curated nouns, around 1150 entries long.               |
 | *prefix*     | String   | *not included*                                         | A prefix.                                |
 | *suffix*     | String   | *not included*                                         | A suffix.                                |
 | *glue*       | String   | `_`           | When a name is generated, all the words will be glued together using this string. |
