@@ -1,6 +1,6 @@
 {
   "name": "compadre",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "a name generator for front-end apps",
   "main": "index.js",
   "scripts": {
