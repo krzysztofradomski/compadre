@@ -1,16 +1,29 @@
 {
   "name": "compadre",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "description": "a name generator for front-end apps",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "demo": "npm run demo.js"
+    "test": "mocha index.test.js",
+    "demo": "node demo.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/krzysztofradomski/compadre"
   },
   "keywords": [
+    "random",
     "name",
     "generator"
   ],
-  "author": "Krzysztof Radomski",
-  "license": "MIT"
+  "bugs": {
+    "url": "https://github.com/krzysztofradomski/compadre/issues"
+  },
+  "homepage": "https://github.com/krzysztofradomski/compadre",
+  "author": "Krzysztof Radomski <krzysztof@radomski.io>",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
+  }
 }
