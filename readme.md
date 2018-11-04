@@ -1,4 +1,5 @@
 # Compadre
+[![](https://img.shields.io/npm/dt/compadre.svg)](https://npm-stat.com/charts.html?package=compadre) [![](https://img.shields.io/npm/l/compadre.svg)](https://opensource.org/licenses/MIT)
 ## Note: this is all work in progress!
 A random name generator, giving you a unique and sanitized two-piece name for your web app needs.
 It should work flawlessly for both browser and node javascript applications.
@@ -8,7 +9,8 @@ $ npm install compadre
 ```
 ## Quickstart
 ```javascript
-import compadre from 'compadre'; | const compadre = require(compadre);
+import compadre from 'compadre';
+// alternatively: const compadre = require(compadre);
 const nameGenerator = new compadre();
 const name = nameGenerator.generate();
 console.log(name); // funky_swordfish
@@ -36,7 +38,8 @@ The constructor creates a class instance with a `generate()` method.
 Default settings will generate random two-piece name.
 
 ```javascript
-import compadre from 'compadre'; | const compadre = require(compadre);
+import compadre from 'compadre';
+// alternatively: const compadre = require(compadre);
 
 const compadre1 = new compadre();
 const name1 = compadre1.generate();    // blue_swede
@@ -54,7 +57,8 @@ Compadre includes two lists of neutral and non-offensive words: nouns and adject
 Provided lists will overwrite the included lists, you can override one or both. Note that only adjectives can be an empty list. Generally, it is wise to use config other options if your lists are not very long. See example below:
 
 ```javascript
-import compadre from 'compadre'; | const compadre = require(compadre);
+import compadre from 'compadre';
+// alternatively: const compadre = require(compadre);
 
 const superheroes = {
   adjectives: ['super', 'captain', 'awesome'],
@@ -75,7 +79,8 @@ const name3 = c.generate(); // SuperSolidMan
 ## Fallback word and recycling words
 Unique names come at a price - the noun dictionary can be depleted. To make sure each generated name is unique, you need a fallback option - a timestamp by default. You can provide your own string generating function to act as a fallback. You can also recycle used words, e.g. you create objects that need unique display names, but after you delete such an object, you can push their name back into the noun pool. 
 ```javascript
-import compadre from 'compadre'; | const compadre = require(compadre);
+import compadre from 'compadre';
+// alternatively: const compadre = require(compadre);
 const basic = {
   adjectives: [],
   nouns: ['man', 'Bear', 'pig'],
@@ -109,7 +114,7 @@ The code coverage is quite low, you can contribute by a making a pr!
 npm run test
 ```
 ### Dependencies
-None, except for some testing devedependencies.
+None, except for some testing dev dependencies.
 ### Credits
 Inspired by the lack of such libs and then finding [Goby](https://github.com/SeanCannon/goby).
 ### License 
