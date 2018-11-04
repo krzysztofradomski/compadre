@@ -97,6 +97,10 @@ for (let index = 0; index <= 5; index++) {
   // Annie (dictionary has a new entry, so it is used now)
   // timestamp-Anon (dictionary depleted again)
 ```
+### Demo
+```javascript
+npm run demo
+```
 ### Tests
 ```javascript
 npm run test
