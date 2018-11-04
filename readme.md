@@ -4,7 +4,7 @@ A random name generator, giving you a unique and sanitized two-piece name for yo
 ```
 $ npm install compadre
 ```
-## Quickstart
+## Quickstart|| Note: this is all work in progress!
 ```javascript
 import compadre from 'compadre';
 const nameGenerator = new compadre();
@@ -98,8 +98,8 @@ for (let index = 0; index <= 5; index++) {
   // timestamp-Anon (dictionary depleted again)
 ```
 ### Dependencies
-Compadre uses ES6 syntax, but has no dependencies of its own. Make sure to have a proper babel/webpack setup to use `compadre`.
+None.
 ### Credits
 Inspired by the lack of such libs and then finding [Goby](https://github.com/SeanCannon/goby).
 ### License 
-MIT, feel free to use to your heart's desire.
+MIT.

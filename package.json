@@ -7,10 +7,19 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "demo": "npm run demo.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/krzysztofradomski/compadre"
+  },
   "keywords": [
+    "random",
     "name",
     "generator"
   ],
-  "author": "Krzysztof Radomski",
+  "bugs":{
+    "url": "https://github.com/krzysztofradomski/compadre/issues"
+  },
+  "homepage": "https://github.com/krzysztofradomski/compadre",
+  "author": "Krzysztof Radomski <krzysztof@radomski.io>",
   "license": "MIT"
 }
