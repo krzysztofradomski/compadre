@@ -1,7 +1,7 @@
 {
   "name": "compadre",
-  "version": "2.0.0",
-  "description": "a name generator for front-end apps",
+  "version": "2.1.0",
+  "description": "a name generator for javascript apps",
   "main": "index.js",
   "scripts": {
     "test": "mocha index.test.js",
