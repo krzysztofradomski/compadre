@@ -81,6 +81,7 @@ var compadre = function () {
 
       Object.keys(this).forEach(function (key) {
         _this2[key] = null;
+        delete _this2[key];
       });
     }
   }, {
