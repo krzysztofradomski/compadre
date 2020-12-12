@@ -2,7 +2,7 @@
 [![](https://img.shields.io/npm/dt/compadre.svg)](https://npm-stat.com/charts.html?package=compadre) [![](https://img.shields.io/npm/l/compadre.svg)](https://opensource.org/licenses/MIT)
 ## Note: this is all work in progress!
 A random name generator, giving you a unique and sanitized two-piece name for your web app needs.
-It should work flawlessly for both browser and node javascript applications.
+It should work in both browser and node javascript applications. Only 7kb minified and gzipped!
 ## Install
 ```
 $ npm install compadre
@@ -10,7 +10,7 @@ $ npm install compadre
 ## Quickstart
 ```javascript
 import compadre from 'compadre';
-// alternatively: const compadre = require(compadre);
+// alternatively: const compadre = require('compadre');
 const nameGenerator = new compadre();
 const name = nameGenerator.generate();
 console.log(name); // funky_swordfish
@@ -25,13 +25,13 @@ Optionally, when instancing a new generator, `config` object can be passed with 
 | ------------ | -------- | -------------- | ----------- |
 | *adjectives* | Array    | [Included](https://github.com/krzysztofradomski/compadre/blob/master/dictionaries/adjectives.js)  | A list of curated adjectives, around 520 entries long.          |
 | *nouns*      | Array    | [Included](https://github.com/krzysztofradomski/compadre/blob/master/dictionaries/nouns.js)       | A list of curated nouns, around 1150 entries long.               |
-| *prefix*     | String   | *not included*                                         | A prefix.                                |
-| *suffix*     | String   | *not included*                                         | A suffix.                                |
-| *glue*       | String   | `_`           | When a name is generated, all the words will be glued together using this string. |
-| *unique*     | Boolean  | *false*       | Nouns can be unique, not like in some other generators!                           |
-| *fallback*   | Function | `Date.now()`  | Unique names means you can run out of dictionary! If you use custom lists and unique names, be sure to provide a good fallback word/phrase returning function, else a timestamp will be used.                                                                                                |
-| *up*         | Boolean  | *false*       | Whether or not the nouns and adjectives will be uppercased.                       |
-| *maxLen*     | Integer  | *null*        | Max length of the adjective and the noun. There is no default limit.              |
+| *prefix*     | String   | `null`                                         | A prefix.                                |
+| *suffix*     | String   | `null`                                         | A suffix.                                |
+| *glue*       | String   | `_`           | When a name is generated, all the words will be glued together using this string (default is underscore). |
+| *unique*     | Boolean  | `false`       | Names can be unique, not like in some other generators! Set to `true` to have the generated names unique.                        |
+| *fallback*   | Function | `function() { return Date.now() * Math.random() + '.fallback'}`  | Unique names means you can run out of dictionary! If you use custom lists and unique names, be sure to provide a good fallback word/phrase returning function, else this here will be used.                                                                                                |
+| *up*         | Boolean  | `false`       | Whether or not the nouns and adjectives will be uppercased.                       |
+| *maxLen*     | Integer  | `null`        | Max length of the output string. There is no default limit. Be carful when using with unique names and fallbacks.              |
 
 ## Basic usage
 The constructor creates a class instance with a `generate()` method.
@@ -39,7 +39,7 @@ Default settings will generate random two-piece name.
 
 ```javascript
 import compadre from 'compadre';
-// alternatively: const compadre = require(compadre);
+// alternatively: const compadre = require('compadre');
 
 const compadre1 = new compadre();
 const name1 = compadre1.generate();    // blue_swede
@@ -58,7 +58,7 @@ Provided lists will overwrite the included lists, you can override one or both. 
 
 ```javascript
 import compadre from 'compadre';
-// alternatively: const compadre = require(compadre);
+// alternatively: const compadre = require('compadre');
 
 const superheroes = {
   adjectives: ['super', 'captain', 'awesome'],
@@ -80,7 +80,7 @@ const name3 = c.generate(); // SuperSolidMan
 Unique names come at a price - the noun dictionary can be depleted. To make sure each generated name is unique, you need a fallback option - a timestamp by default. You can provide your own string generating function to act as a fallback. You can also recycle used words, e.g. you create objects that need unique display names, but after you delete such an object, you can push their name back into the noun pool. 
 ```javascript
 import compadre from 'compadre';
-// alternatively: const compadre = require(compadre);
+// alternatively: const compadre = require('compadre');
 const basic = {
   adjectives: [],
   nouns: ['man', 'Bear', 'pig'],
@@ -109,7 +109,7 @@ for (let index = 0; index <= 5; index++) {
 npm run demo
 ```
 ### Tests
-The code coverage is quite low, you can contribute by a making a pr!
+A good spot you can contribute to by a making your first pr!
 ```javascript
 npm run test
 ```
