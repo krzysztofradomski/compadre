@@ -1,6 +1,6 @@
 # Compadre
 [![](https://img.shields.io/npm/dt/compadre.svg)](https://npm-stat.com/charts.html?package=compadre) [![](https://img.shields.io/npm/l/compadre.svg)](https://opensource.org/licenses/MIT)
-## Note: this is all work in progress!
+
 A random name generator, giving you a unique and sanitized two-piece name for your web app needs.
 It should work in both browser and node javascript applications. Only 7kb minified and gzipped!
 ## Install
