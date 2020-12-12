@@ -1,5 +1,5 @@
-var expect = require('chai').expect;
-var compadre = require('./index');
+const expect = require('chai').expect;
+const compadre = require('./index');
 
 describe('compadre', function() {
   describe('init', function() {
@@ -12,25 +12,29 @@ describe('compadre', function() {
     });
   });
   describe('generate', function() {
-    const nameGenerator = new compadre();
+    let nameGenerator = new compadre();
     it('should work with default settings', function() {
-      expect(nameGenerator.generate()).to.satisfy(returnString);
-      function returnString(item) {
-        return typeof item === 'string';
-      }
+      expect(nameGenerator.generate()).to.satisfy(item => typeof item === 'string');
     });
-    it('should work with custom settings', function() {
-      expect(true).to.be.true;
+    nameGenerator = new compadre({glue: "*"});
+    it('should work with custom glue settings', function() {
+      expect(nameGenerator.generate({glue: '*'}).includes('*')).to.be.true;
     });
   });
   describe('seed', function() {
-    it('should work', function() {
-      expect(true).to.be.true;
+    const nameGenerator = new compadre({adjectives: [], nouns: [], unique: false});
+    it('should be possible to seed a custom word', function() {
+      nameGenerator.seed('seed')
+      expect(nameGenerator.generate()).to.equal('seed');
+      expect(nameGenerator.generate()).to.equal('seed');
+      expect(nameGenerator.generate()).to.equal('seed');
     });
   });
   describe('kill', function() {
-    it('should work', function() {
-      expect(true).to.be.true;
+    it('should be possible to clear the compadre object of its contents', function() {
+      const nameGenerator = new compadre();
+      nameGenerator.kill();
+      expect(Object.keys(nameGenerator).length === 0).to.be.true;
     });
   });
 });
