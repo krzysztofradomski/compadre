@@ -36,7 +36,7 @@ var compadre = function () {
     this.glue = glue || '_';
     this.prefix = prefix;
     this.suffix = suffix;
-    this.fallback = fallback || Date.now;
+    this.fallback = fallback || function() { return Date.now() * Math.random() + '.fallback'}
     this.unique = unique || false;
     this.maxLen = maxLen || null;
     this.up = up || false, this.used = [];
@@ -81,6 +81,7 @@ var compadre = function () {
 
       Object.keys(this).forEach(function (key) {
         _this2[key] = null;
+        delete _this2[key];
       });
     }
   }, {
