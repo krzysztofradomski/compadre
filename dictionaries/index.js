@@ -1,23 +1,6 @@
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+const { nounsDictionary } = require('./nouns.js');
+const { adjectivesDictionary } = require('./adjectives.js');
 
-var _nouns = require('./nouns.js');
-
-Object.defineProperty(exports, 'nounsDictionary', {
-  enumerable: true,
-  get: function get() {
-    return _nouns.nounsDictionary;
-  }
-});
-
-var _adjectives = require('./adjectives.js');
-
-Object.defineProperty(exports, 'adjectivesDictionary', {
-  enumerable: true,
-  get: function get() {
-    return _adjectives.adjectivesDictionary;
-  }
-});
+module.exports = { nounsDictionary, adjectivesDictionary };
