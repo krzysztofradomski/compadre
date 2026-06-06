@@ -3,8 +3,15 @@
   "version": "3.2.0",
   "description": "a name generator for javascript apps",
   "main": "index.js",
+  "exports": {
+    ".": "./index.js"
+  },
+  "files": [
+    "index.js",
+    "dictionaries/"
+  ],
   "scripts": {
-    "test": "istanbul cover -x *.test.js _mocha -- -R spec index.test.js",
+    "test": "nyc mocha index.test.js",
     "demo": "node demo.js"
   },
   "repository": {
@@ -22,9 +29,23 @@
   "homepage": "https://github.com/krzysztofradomski/compadre",
   "author": "Krzysztof Radomski <krzysztof@radomski.io>",
   "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
   "devDependencies": {
-    "chai": "^4.2.0",
-    "istanbul": "^0.4.5",
-    "mocha": "^10.2.0"
+    "chai": "^5.2.0",
+    "mocha": "^11.0.0",
+    "nyc": "^17.0.0"
+  },
+  "nyc": {
+    "exclude": [
+      "*.test.js",
+      "demo.js"
+    ]
+  },
+  "overrides": {
+    "diff": "^8.0.4",
+    "serialize-javascript": "^7.0.5",
+    "uuid": "^11.1.1"
   }
 }
